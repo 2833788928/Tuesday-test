@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        #studentName{
+            width: 600px;
+            height: 200px;
+            border:1px solid #ddd;
+            border-radius: 15px;
+            margin:150px auto 0;
+            font-size: 80px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .btn{
+            width: 180px;
+            height: 60px;
+            background: #ff6700;
+            margin: 30px auto;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .btn:hover{
+            background: #b64b05;
+        }
+    </style>
+</head>
+<body>
+    <div id="studentName"></div>
+    <div class="btn" onclick="selectPerson(event)">开始</div>
+</body>
+<script>
+    var isStart = false
+    // var oBtn = document.getElementsByClassName("btn")
+    var interVal = null
+    var list = [
+        {
+            "name":"陈佳尚",
+            "key":1
+        },
+        {
+            "name":"李建博",
+            "key":1
+        },
+        {
+            "name":"韩紫星",
+            "key":1
+        },
+        {
+            "name":"刘浩",
+            "key":1
+        },
+        {
+            "name":"马帅生",
+            "key":1
+        },
+        {
+            "name":"李亚洲",
+            "key":1
+        },
+        {
+            "name":"李学涛",
+            "key":1
+        },
+        {
+            "name":"李亮",
+            "key":1
+        },
+        {
+            "name":"李俊鲸",
+            "key":1
+        },
+        {
+            "name":"武容敏",
+            "key":1
+        },
+        {
+            "name":"文雅静",
+            "key":1
+        },
+        {
+            "name":"王驰",
+            "key":1
+        },
+        {
+            "name":"王国伟",
+            "key":1
+        },
+        {
+            "name":"张鑫",
+            "key":1
+        },
+        {
+            "name":"李章鑫",
+            "key":1
+        },
+        {
+            "name":"谷青松",
+            "key":1
+        },
+        {
+            "name":"靳凯",
+            "key":1
+        },
+        {
+            "name":"温海宝",
+            "key":1
+        },
+        {
+            "name":"邵世兴",
+            "key":1
+        },
+        {
+            "name":"郑天",
+            "key":1
+        },
+        {
+            "name":"乔飞",
+            "key":1
+        },
+        {
+            "name":"张静涛",
+            "key":1
+        },
+        {
+            "name":"王亚博",
+            "key":1
+        },
+        {
+            "name":"孙江",
+            "key":1
+        },
+        {
+            "name":"孙晓东",
+            "key":1
+        },
+        {
+            "name":"霍佳盛",
+            "key":1
+        },
+        {
+            "name":"王树鑫",
+            "key":1
+        },
+        {
+            "name":"卢晓静",
+            "key":1
+        },
+        {
+            "name":"宋田田",
+            "key":1
+        },
+        {
+            "name":"管士才",
+            "key":1
+        },
+        {
+            "name":"袁政",
+            "key":1
+        },
+        {
+            "name":"王宁宇",
+            "key":1
+        },
+        {
+            "name":"侯先辉",
+            "key":1
+        },
+        {
+            "name":"王婧雅",
+            "key":1
+        },
+        {
+            "name":"曹玉飞",
+            "key":1
+        },
+        {
+            "name":"常申奥",
+            "key":1
+        },
+        {
+            "name":"魏立超",
+            "key":1
+        },
+        {
+            "name":"朱子恒",
+            "key":1
+        },
+        {
+            "name":"张舞墨",
+            "key":1
+        },
+        {
+            "name":"葛宇琪",
+            "key":1
+        },
+        {
+            "name":"马亚东",
+            "key":1
+        },
+        {
+            "name":"路朝政",
+            "key":1
+        },
+        {
+            "name":"冀茂金",
+            "key":1
+        },
+        {
+            "name":"石浩然",
+            "key":1
+        },
+        {
+            "name":"张欣",
+            "key":1
+        },
+        {
+            "name":"马玉润",
+            "key":1
+        },
+        {
+            "name":"高伟涛",
+            "key":1
+        },
+        {
+            "name":"钟长宇",
+            "key":1
+        },
+        {
+            "name":"郝风光",
+            "key":1
+        },
+        {
+            "name":"杨楠",
+            "key":1
+        },
+        {
+            "name":"陈金刚",
+            "key":1
+        },
+        {
+            "name":"陈晓飞",
+            "key":1
+        },
+        {
+            "name":"刘胜",
+            "key":1
+        },
+        {
+            "name":"王孔地",
+            "key":1
+        },
+        {
+            "name":"吴艳辉",
+            "key":1
+        },
+        {
+            "name":"颜景良",
+            "key":1
+        },
+        {
+            "name":"谢方媛",
+            "key":1
+        },
+        {
+            "name":"赵燕情",
+            "key":1
+        },
+        {
+            "name":"刘明康",
+            "key":1
+        },
+        {
+            "name":"黄真豪",
+            "key":1
+        },
+        {
+            "name":"田真",
+            "key":1
+        },
+        {
+            "name":"王妍蕊",
+            "key":1
+        },
+        {
+            "name":"李继凯",
+            "key":1
+        },
+        {
+            "name":"闫博",
+            "key":1
+        },
+        {
+            "name":"李静科",
+            "key":1
+        },
+        {
+            "name":"孙鹏飞",
+            "key":1
+        },
+        {
+            "name":"麻淑凯",
+            "key":1
+        },
+        {
+            "name":"敦梦阳",
+            "key":1
+        }
+    
+    ]
+    function selectPerson(event){
+        // console.log()
+        var studentName = document.getElementById("studentName")
+
+        if(isStart){
+            event.target.innerText = "开始"
+            isStart = false
+            clearInterval(interVal)
+        }else{
+            isStart = true
+            event.target.innerText = "停止"
+            interVal = setInterval(function(){
+                var rand = Math.round(Math.random()*(list.length-1))
+                // console.log(rand)
+                studentName.innerText = list[rand].name
+            },10)
+        }
+        
+       
+        
+
+        
+    }
+</script>
+
+</html>

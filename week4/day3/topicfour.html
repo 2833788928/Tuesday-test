@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+    <script>
+        //第一个子节点firstchild   第一个元素节点,只有高级浏览器可以使用firstElementchild。
+                // var li=document.getElementById('li');
+
+
+               window.onload=function(){
+                // document.write("创建节点");
+            //     var Box=document.getElementById('#box');
+            //    var oHTML=Box.innerHTML+"<i>创建节点2</i>"
+            // var newElement=document.createElement('img'); 创建想要插入的标签通过
+                    // Box.appendChild=newElement
+                 var pare=document.createElement("p");
+                 pare.innerText="这是一个新的起点";//对节点进行插入文本
+                 var oDiv=document.getElementById('div1');
+                 var op=document.getElementById("p1");
+                 oDiv.innertbefore(pare,op);
+                //  oDiv.removeChild(oDiv); 删除兄弟节点需要先找到父级节点 删除自己需要找到父节点
+                    var xinjiedian=document.createElement('a')
+                    xinjiedian('11')
+            
+
+
+               
+
+               }
+    </script>
+
+</html> 

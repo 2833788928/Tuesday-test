@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        #studentName{
+            width: 600px;
+            height: 200px;
+            border:1px solid #ddd;
+            border-radius: 15px;
+            margin:150px auto 0;
+            font-size: 80px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .btn{
+            width: 180px;
+            height: 60px;
+            background: #ff6700;
+            margin: 30px auto;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .btn:hover{
+            background: #b64b05;
+        }
+    </style>
+</head>
+<body>
+    <div id="studentName"></div>
+    <div class="btn" onclick="selectPerson(event)">开始</div>
+</body>
+<script>
+    var isStart = false
+    // var oBtn = document.getElementsByClassName("btn")
+    var interVal = null
+    var list = [
+        {
+            "name":"1",
+            "key":1
+        },
+        {
+            "name":"2",
+            "key":1
+        },
+        {
+            "name":"3",
+            "key":1
+        },
+        {
+            "name":"4",
+            "key":1
+        },
+        {
+            "name":"5",
+            "key":1
+        },
+        {
+            "name":"6",
+            "key":1
+        },
+        {
+            "name":"7",
+            "key":1
+        },
+        {
+            "name":"8",
+            "key":1
+        },
+        {
+            "name":"9",
+            "key":1
+        },
+        {
+            "name":"10",
+            "key":1
+        },
+       
+       
+        
+    
+    ]
+    function selectPerson(event){
+        // console.log()
+        var studentName = document.getElementById("studentName")
+
+        if(isStart){
+            event.target.innerText = "开始"
+            isStart = false
+            clearInterval(interVal)
+        }else{
+            isStart = true
+            event.target.innerText = "停止"
+            interVal = setInterval(function(){
+                var rand = Math.round(Math.random()*(list.length-1))
+                // console.log(rand)
+                studentName.innerText = list[rand].name
+            },1)
+        }
+        
+       
+        
+
+        
+    }
+</script>
+
+</html>

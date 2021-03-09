@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" style="width: 100px;height: 100px;background-color: red;"></div>
+    <div id="box2"></div>
+</body>
+<script>
+    var oBox = document.querySelector("#box")
+    // oBox.onclick = fn
+    // oBox.onclick = null
+    // oBox.addEventListener('click',fn,false)
+    // oBox.removeEventListener('click',fn,false)
+
+    // oBox.attachEvent('onclick', fn)//只限于ie8使用
+    on(oBox, 'click', fn)
+    off(oBox, 'click', fn)
+    function fn() {
+        console.log(this.id)
+    }
+
+    // 封装一个绑定事件函数
+    function on(obj, evName, evFn) {
+
+        if (obj.addEventListener) {
+            obj.addEventListener(evName, evFn, false)
+        } else {
+            obj.attachEvent('on' + evName, fn)
+            // function (){fn.call(obj)} 将this指向更改为obj，但是无法解绑
+            // fn  指向是window 对象 可以解绑
+        }
+
+    }
+    // 封装的解绑事件
+    function off(obj, eName, eFn) {
+        if (obj.removeEventListener) {
+            obj.removeEventListener(eName, eFn, false);
+        }else {
+            obj.detachEvent('on' + eName, eFn);
+            // 此处对ie8 解绑 对应着绑定的函数指向为 window
+        }
+    }
+
+    // oBox.removeEventListener('click',fn,false)
+    // oBox.attachEvent("onclick",fn)
+    // oBox.detachEvent('onclick',fn)
+
+    // function on(obj, evName, evFn) {
+    //     if (obj.addEventListener) {
+    //         obj.addEventListener(evName, evFn, false);
+    //     } else {
+    //         obj.attachEvent('on' + evName, function () {
+    //             evFn.call(obj)
+    //         });
+    //     }
+    // }
+
+    
+
+
+</script>
+
+</html>

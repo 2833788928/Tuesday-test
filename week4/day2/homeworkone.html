@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           @keyframes myAni{
+            from{transform: rotate(360deg);}
+            to{transform: rotate(0deg);}
+        }
+        .fengche{
+            animation: myAni 3s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <img src="../../../images/timg.png" class="fengche" width="500px" height="500px" alt="">
+    <button class="start">开始</button>
+    <button class="end">结束</button>
+               
+</body>
+<script>
+    window.onload=function(){
+        // alert();
+ var fengche=document.querySelector('.fengche');
+ var end=document.querySelector('.end');
+ var start=document.querySelector('.start');
+ start.onclick=function(){
+    fengche.style.animationPlayState = "running"
+ }
+ end.onclick=function(){
+    fengche.style.animationPlayState = "paused"
+ }
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li style="margin:5px 0;cursor: pointer;" id="newsTitle">新闻信息<button style="margin-left:100px" id="editBtn">编辑</button></li>
+        <li style="margin:5px 0;cursor: pointer;" >新闻信息<button style="margin-left:100px">编辑</button></li>
+        <li style="margin:5px 0;cursor: pointer;" >新闻信息<button style="margin-left:100px">编辑</button></li>
+        <li style="margin:5px 0;cursor: pointer;" >新闻信息<button style="margin-left:100px">编辑</button></li>
+        <li style="margin:5px 0;cursor: pointer;" >新闻信息<button style="margin-left:100px">编辑</button></li>
+    </ul>
+</body>
+<script>
+    var oTitle = document.getElementById('newsTitle')
+    var oBtn = document.getElementById('editBtn')
+    oTitle.onclick = fn
+    oBtn.onclick = fn2
+    function fn(){
+        alert("我要去详情页面",this.id)
+    }
+
+    function fn2(event){
+        var ev = event||window.event
+        ev.cancelBubble  = true
+        alert("我要去编辑页面",this.id)
+    }
+
+</script>
+</html>

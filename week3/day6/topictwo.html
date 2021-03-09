@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myDate{
+            width:150px;
+            height:70px;
+            border:1px solid red;
+            background:black;
+            margin:10px 5px 10px;
+            float: 5cm 12cm 5cm;
+            font-size: 1cm;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="myDate"></div>
+    <div>目标时间:2020-12-19 12:10</div>
+            <script>
+
+
+                   
+                       var MyDate=new Date();
+                       console.log(MyDate);
+                                  
+                      console.log(MyDate.getDate());//打印一个月中的某一天    
+                    //    console.log(MyDate.getDate());getDate 打印每月的一天
+                       //打印一周中的某一天          getday   打印每周日的一天
+                       console.log(MyDate.getDay()) 
+                       //打印年份                       getFullYear 打印年数
+                       console.log(MyDate.getFullYear());
+                       //打印月份                       //getMonth  打印月份
+                       console.log(MyDate.getMonth());
+                       //小时数                           getHours 打印小时数
+                       console.log(MyDate.getHours());
+                       //分钟                              getminutes  打印分钟数  
+                       console.log(MyDate.getMinutes())
+                       //秒数                              getSeconds 打印秒数
+                       console.log(MyDate.getSeconds())
+
+                    //    var week=myDate.getDay()
+                //        console.log(year+'年'+month+'月'+day+'日'+hours+'时'+mins+'分'+seconds+'秒') 
+                          
+                          
+                //             function format(){
+                //                 var weeklist=['周日','周日','周一','周二','周三','周四','周五','周六'];
+                //                 var date=new Date();
+                //                 var year=myDate.getfullYear();
+                //                 var month=myDate.getMonth()+1>=10?myDate.getMonth()+1:"0"+(myDate.getMonth()+1)
+                                    
+                //                 var data=myDate.getDate()>=10?myDate():"0"+myDate.getDate();
+                //                 var second=myDate.getHours()>=10?getHours():"0"+myDate.getHours();
+                //                 var hours=myDate.getMinues()>=10?getMinues():"0"+myDate.getMinues();
+                //                 var min=myDate.getSeconds()>=10?getSeconds():"0"+myDate.getSeconds();
+                //                 var week =myDate.getDay();
+                //                 var showDate=document.getElementById("myDate");                   
+                              
+                //             }
+                //             var targetDate=new Date('2020-12-19 11:43:00').getTime()
+                //             var interVal= setInterval(function(){
+                //                 var myDate=new Date();
+
+                //                 if(myDate.getTime()>=targetDate){
+                //                 clearInterval(interVal)
+                //                 alert("时间到了")
+                // }
+                           
+                //             },1000);
+                           
+                           
+                                    
+
+
+            </script>
+</body>
+</html>

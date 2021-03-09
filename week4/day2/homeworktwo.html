@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .fuzhuangChild{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 200px;
+        }
+        .fuzhuangChild div{
+            width: 100px;
+            height: 50px;
+            border-bottom: 1px solid #f5f5f5;
+            background-color: rgb(6, 78, 78);
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+        }
+        .fuzhuang{
+            /* padding: 50px 10px; */
+            background-color: chocolate;
+            color: #fff;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-bottom: 1px solid #f5f5f5;
+            cursor: pointer;
+        }
+        .parents{
+            width: 200px;
+        }
+        /* .parents:hover .fuzhuangChild{
+            display: block;
+        } */
+    </style>
+</head>
+<body>
+    <div >
+        <div class="parents">
+           <div class="fuzhuang">奶茶</div> 
+           <div class="fuzhuangChild">
+               <div>猫屎咖啡</div>
+               <div>优乐美</div>
+              
+           </div>
+        </div>
+        <div class="parents">
+            <div class="fuzhuang">凉饮</div>
+            <div class="fuzhuangChild">
+                <div>柠檬水</div>
+                <div>西瓜汁</div>
+                <div>可乐</div>
+            </div>
+        </div>
+        <div class="parents">
+            <div class="fuzhuang">茶</div>
+            <div class="fuzhuangChild">
+                <div>红茶</div>
+                <div>绿茶</div>
+            </div>
+        </div>
+        
+    </div>    
+</body>
+<script>
+    var parents = document.querySelectorAll(".parents");
+    var fuzhuangChild = document.querySelectorAll(".fuzhuangChild");
+    console.log(parents)
+    // 循环对父节点进行循环绑定事件
+    for(var i=0;i<parents.length;i++){
+        parents[i].index = i
+        parents[i].onmouseenter = function(){
+            fuzhuangChild[this.index].style.display = 'block'
+        }
+        parents[i].onmouseleave = function(){
+            fuzhuangChild[this.index].style.display = 'none'
+        }
+    }
+    // console.log(parents)
+
+</script>
+</html>

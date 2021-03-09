@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var num = 11;  // 全局变量（全局作用域）
+
+    // 小世界
+    function fn(){
+        var num = 12; // 局部变量 （局部作用域）
+        console.log('内部',num)
+    }
+
+    // 小世界
+    function fn2() {
+        var num = ''
+        console.log('另一个内部',num)
+    }
+
+    // function fn3() {
+    //     str = "123"
+    //     console.log(str)
+    // }
+
+    
+    // fn()
+    // fn2()
+    fn3()
+    console.log('外部',str);
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                p{
+                        background: red;
+                        color :black;
+                        cursor:pointer;
+                        padding: 10px 15px;
+
+                }
+    </style>
+</head>
+<body>
+    <p class="pl">1</p>
+    <p class="pl">2</p>
+    <p class="pl">3</p>
+    <p class="pl">4</p>
+    <p class="pl">5</p>
+   
+</body>
+    <script>
+        window.onload=function(){
+            var oplist=document.querySelectorAll('.pl');
+            for(let i  in oplist){
+                oplist[i].onclick=function(){
+                    alert('小鸟伏特加'+i);
+                }
+            }
+        }
+    </script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="p1">1</a>
+    <a href="p1">2</a>
+    <a href="p1">3</a>
+    
+</body>
+<script>
+            window.onload=function(){
+                var p1=document.querySelectorAll('.p1');
+                for(var i in list){
+                    list[i].onmouseover=function(){
+                        this.style.backgroundColor="#aaa"
+                        this.style.color="#fff"
+                    }
+                    list[i].onmouseout=function(){
+                        this.style.backgroundColor="#f5f5f5"
+                    
+                    }
+                }
+
+            }
+</script>
+</html>

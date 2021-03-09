@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    
+    var arr= [1,2,3,4,5]
+    var max = arr[0]
+    for(var i=1;i<arr.length;i++){
+        if(max<arr[i]){     
+            max = arr[i]
+        }
+        
+    }
+    
+    document.write(max);
+            
+    var ara=[1,2,3,4,5]
+    var min=ara[0];
+        for(var i=1;i<ara.length;i++){a
+            if(min>ara[i]){
+                min=ara[i]
+            }
+        } 
+        document.write(min);    
+      //求合
+var arr3=[1,2,4,6,9,10,12,15,17];
+ 
+
+//定义任意两个数相加的和为19；
+var sum=19;
+ 
+//双向循环遍历，从两头向中间走
+for(var i=0,j=arr3.length-1;i<j;){
+ 
+    //如果i+j的值大于sum
+    if(arr3[i]+arr3[j]<sum)
+ 
+    //则i往后走一位
+        i++;
+ 
+    //否则如果i+j的值小于sum
+    else if(arr3[i]+arr3[j]>sum)
+ 
+    //则j往前走一位               
+        j--;
+ 
+    //否则如果i+j的值等于sum
+    else{
+        console.log(arr3[i],arr3[j]);
+ 
+        //则输出所有等于sum 的值
+        i++;
+        j--;
+    }
+}
+
+    for(var i=0;i<=10;i++){
+        for(var j=0;j<=i;j++){
+               document.write("*")
+        }
+        document.write("<br>")
+    }
+        var add ="asdasdfadsfadf";
+            
+
+            
+ 
+                    
+</script>
+</html>

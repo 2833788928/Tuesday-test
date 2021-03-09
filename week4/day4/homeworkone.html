@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        *{
+            padding: 0;
+            /* 属性设置元素的内边距。 */
+            margin: 0;
+            /* margin 外边距的意思 */
+        }
+        .banner{
+            width:600px;
+            height:400px;
+            margin:50 auto 0;
+            position:relative
+            /* position:relative相对路径  absolute绝对路径*/
+        }
+
+            .banner{
+                width:600px;
+                height:400px;
+                position: relative;
+                /* 绝对路径吧 */
+            }
+
+            .banner_box>img{
+                width:600px;
+                height:400px;
+                display:block; 
+                /* 让对象成为块级元素 */
+                position:absolute;
+                top:0;
+                left:0;
+                display:none;
+            }
+            .banner_btn{
+                width:30px;
+                height:60px;
+                background-color:black;
+                position:absolute;
+                top:50%;
+                margin-top: 30px;
+                color:white;
+                font-size: 32px;
+                text-align:center;
+                line-height: 60px;
+                cursor: pointer;
+                display:none;
+                transition: 0.3s;
+            }
+    </style>
+</head>
+<body>
+                <script>
+                    window.onload=function(){
+                    
+                       var btn=documentgetElementById('btn');
+                       btn.onclick=function(){
+                            
+                       }
+                    }
+                        
+        </script>
+</body>
+</html>h

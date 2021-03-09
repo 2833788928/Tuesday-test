@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes rotate{
+            from{transform: rotate(359deg)}
+        }
+    </style>
+</head>
+<body>
+    <img src='../../../images/timg.png' alt="" class="zhuan" id="zhuanzhuan">
+    <input type="button" value="开始" id="start">
+    <input type="button" value="结束" id="end">
+</body>
+<script>
+    // 页面加载完成事件
+    window.onload=function(){
+        // var isTurning=false
+        // var turn=0
+        // if(isTurning){
+        //     return;
+        // }
+        // 关闭点击事件
+        isTurning=true
+        // 根据id获取
+        var zhuan=document.getElementById('zhuanzhuan')
+        var start=document.getElementById('start')
+        var end=document.getElementById('end')
+        // 给开始按钮绑定点击事件
+        start.onclick=function(){
+            // linear 规定以相同速度开始至结束的过渡效果  infinite无限无穷
+            zhuan.style="animation: rotate 3s linear infinite;"
+        }
+        end.onclick=function(){
+            zhuan.style=""
+            // isTurning=false
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="quanxuan">全选</button>
+    <button class="quanbu">全不选</button>
+    <button class="fanxuan">反选</button>
+    <input type="checkbox" class="btn">玛莎
+    <input type="checkbox" class="btn">凯迪拉克
+    <input type="checkbox" class="btn">宾利
+    <input type="checkbox" class="btn">奥迪
+    <input type="checkbox" class="btn">帝豪
+    <input type="checkbox" class="btn">雪佛兰
+    <input type="checkbox" class="btn">路虎
+    <input type="checkbox" class="btn">奔驰
+    <input type="checkbox" class="btn">雷克萨斯
+    <script>
+        window.onload=function(){
+            var quan=document.querySelector('.quanxuan');
+            var bu=document.querySelector('.quanbu');
+            var fan=document.querySelector('.fanxuan');
+                       var btn= document.querySelectorAll('.btn');
+                    quan.onclick=function(){
+                        for(var i=0; i<btn.length;i++){
+                            btn[i].checked=true;
+                        }
+                    } 
+                    bu.onclick=function(){
+                        for(var i=0; i<btn.length;i++){
+                            btn[i].checked=false;
+                        }
+                    } 
+                    fan.onclick=function(){
+                        for(var i=0; i<btn.length;i++){
+                            btn[i].checked=!btn[i].checked;
+                        }
+                    } 
+
+        }
+    </script>
+</body>
+</html>

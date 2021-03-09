@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox"  checked="">烫头
+    <input type="checkbox"  checked="">喝酒
+    <input type="checkbox"  checked="">抽烟<br>
+
+    <button  class="one">全选</button>
+    <button  class="two">全不选</button>
+    <button class="three">反选</button>
+        <script>
+            window.onload=function(){
+                // alert();
+                   var one11 = document.querySelector('.one');
+                   var two = document.querySelector('.two');
+                   var three = document.querySelector('.three');
+                //    console.log(one);
+                  
+                    //    alert();
+                    var status= document.querySelectorAll('input');
+                    one11.onclick = function(){
+                        for(var i=0;i<=status.length-1;i++){
+                            status[i].checked=true;
+                           
+                       }
+                   }
+                two.onclick = function(){
+                        for(var i=0;i<=status.length-1;i++){
+                            status[i].checked=false;
+                           
+                       }
+                   }
+                   three.onclick = function(){
+                        for(var i=0;i<=status.length-1;i++){
+                           
+                         status[i].checked = !status [i].checked
+                           
+                       }
+                   }
+
+                   
+            }
+        </script>
+</body>
+</html>

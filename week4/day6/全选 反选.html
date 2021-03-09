@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1">全选</button>
+    <button class="btn2">全不选</button>
+    <button class="btn3">反选</button>
+    <input type="checkbox" class="oInput"> 唱歌
+    <input type="checkbox" class="oInput"> 跳舞
+    <input type="checkbox" class="oInput"> rap
+    <input type="checkbox" class="oInput"> 抽烟
+    <input type="checkbox" class="oInput"> 喝酒
+    <input type="checkbox" class="oInput"> 烫头
+</body>
+<script>
+    window.onload =function(){
+        var oBtn1 = document.querySelector('.btn1');
+        var oBtn2 = document.querySelector('.btn2');
+        var oBtn3 = document.querySelector('.btn3');
+        var inputList = document.querySelectorAll('.oInput')
+        oBtn1.onclick = function(){
+            for(var i = 0;i<inputList.length;i++){
+                inputList[i].checked = true
+            }
+        }
+
+        oBtn2.onclick = function(){
+            for(var i = 0;i<inputList.length;i++){
+                inputList[i].checked = false
+            }
+        }
+
+        oBtn3.onclick = function(){
+            for(var i = 0;i<inputList.length;i++){
+                inputList[i].checked = !inputList[i].checked
+            }
+        }
+    }
+</script>
+</html>
